@@ -11,12 +11,15 @@ import { environment } from '../environments/environment';
 import { PostsComponent } from './posts/posts.component';
 import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ThemeService } from './services/theme.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
